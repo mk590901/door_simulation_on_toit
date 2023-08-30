@@ -13,3 +13,12 @@ An application is a set of classes that implement the idea outlined above in the
 
 ## Class State
 The class contains a container of objects of type Transition. Each state corresponds to a set of transitions from this state to other states under the influence of events.
+
+## Class Transition
+The object of the Transition class contains a pair: state to which to transition, and an object with the ITransition interface, the 'execute'' method to be called on the transition.
+
+## Class Trans.
+This class describes the transition of the state machine from the current state to another under the influence of some event. In the constructor of the State class, the elements of the Trans object are converted into container of transitions.
+
+## Interface ITransition.
+The 'execute' function without parameters. Parameters or additional attributes for 'execute' function can be in the class that implements the interface.
