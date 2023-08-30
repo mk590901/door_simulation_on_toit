@@ -1,0 +1,2 @@
+interface ITransition :
+  execute -> none
