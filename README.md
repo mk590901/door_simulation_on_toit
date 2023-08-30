@@ -17,7 +17,7 @@ The class contains a container of objects of type Transition. Each state corresp
 ## Class Transition
 The object of the Transition class contains a pair: state to which to transition, and an object with the ITransition interface, the 'execute'' method to be called on the transition.
 
-## Class Trans.
+## Class Trans
 This class describes the transition of the state machine from the current state to another under the influence of some event. In the constructor of the State class, the elements of the Trans object are converted into container of transitions.
 
 ## Interface ITransition.
