@@ -8,4 +8,8 @@ An application written in the toit language (https://toit.io/) is a simulator of
 
 I.e. the door can be opened, closed and attempted to be opened at the moment it closes, because opening and closing  take time.
 
+# Application structure
+An application is a set of classes that implement the idea outlined above in the Introduction.
 
+## Class State
+The class contains a container of objects of type Transition. Each state corresponds to a set of transitions from this state to other states under the influence of events.
