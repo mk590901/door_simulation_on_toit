@@ -1,8 +1,5 @@
 # Door simulation on toit
-
-![esp32-d1-mini](https://github.com/mk590901/door_simulation_on_toit/assets/125393245/4e479040-0df7-49b5-a3c0-c4bfc8c6f0e3)
-
-
+![hiletgo_esp32_mini](https://github.com/mk590901/door_simulation_on_toit/assets/125393245/1f8acbf2-a3f9-483f-9b73-47edb84f994c)
 # Introduction
 The reason for writing this application was to try to show how can create managed code app uses object-oriented approach and that will run on a controller with more than limited resources.
 
