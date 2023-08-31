@@ -22,3 +22,22 @@ This class describes the transition of the state machine from the current state 
 
 ## Interface ITransition.
 The 'execute' function without parameters. Parameters or additional attributes for 'execute' function can be in the class that implements the interface.
+
+## Class BasicStateMachine
+This abstract class implements the transition of the state machine from one state to another under the influence of the given event. If the transition is valid, then the transition's function is called when. The basic class also delegates to the inheritance class to implement several additional functions: create , publish , getStateName and getEventName . In this case, inheritance class is the DoorStateMachine class.
+
+## Class DoorStateMachine
+This class inherited from basic class BasicStateMachine, implements the logic described in the Introduction. Pay attention to the create method: in fact, this is the description of state machine. The class also contains an instance of object of type TimersEngine. This class allows to create several timers that are used by the application to simulate time delays when opening and closing a door.
+
+## Interface INotifier
+Describes the behavior of an object with start and final functions. In this case, object is used in a timer. The start of the timer is accompanied by a call to the start method, the stop leads to the call of the final method.
+
+## Class Timer
+Contains identifier and notifier. The latter implements the start and final commands of the timer.
+
+## Class TimersEngine
+Contains a container of timers, Allows to add, remove or start a named timer, as well as reset it by marking it as inactivated. The class contains a task in terms of toit, which runs when there are no active timers and exits automatically when all running timers become inactive. Pay attention to two functions: run_periodically and run_periodically_in_task. They are what make the class work. These seven lines of code are not for the weak-minded the mournful-minded like me. The secret of using these functions was shared with me by FFFF, one of the creators of the language, for which I am especially grateful to him.
+
+## main
+And finally the main module, which creates the DoorStateMachine, initiates it and runs the simulation.
+
