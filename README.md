@@ -39,5 +39,5 @@ Contains identifier and notifier. The latter implements the ***start*** and ***f
 Contains a container of timers, Allows to add, remove or start a named timer, as well as reset it by marking it as inactivated. The class contains a __task__ in terms of __toit__, which runs when there are no active timers and exits automatically when all running timers become inactive. Pay attention to two functions: ***run_periodically*** and ***run_periodically_in_task***. They are what make the class work. These seven lines of code are not for the weak-minded the mournful-minded like me. The secret of using these functions was shared with me by FFFF, one of the creators of the language, for which I am especially grateful to him.
 
 ## main
-And finally the main module, which creates the DoorStateMachine, initiates it and runs the simulation.
+And finally the main module, which creates the ***DoorStateMachine***, initiates it and runs the simulation.
 
