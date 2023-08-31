@@ -12,7 +12,7 @@ I.e. the door can be opened, closed and attempted to be opened at the moment it 
 An application is a set of classes that implement the idea outlined above in the Introduction.
 
 ## Class State
-The class contains a container of objects of type Transition. Each state corresponds to a set of transitions from this state to other states under the influence of events.
+The class contains a container of objects of type ***Transition***. Each state corresponds to a set of transitions from this state to other states under the influence of events.
 
 ## Class Transition
 The object of the Transition class contains a pair: state to which to transition, and an object with the ITransition interface, the 'execute'' method to be called on the transition.
