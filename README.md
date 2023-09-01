@@ -101,3 +101,7 @@ micrcx@micrcx-desktop:~/toit_apps/door_simulation_short$ toit run -d=nuc door_ru
 (19:05:52.590) [Final timer : close engine]
 2023-08-30T17:05:53.096294Z: <process terminated - exit code: 0>
 ```
+# Movie
+
+https://github.com/mk590901/door_simulation_on_toit/assets/125393245/9656e519-550c-4bd1-9e6b-4eea07fedde6
+
