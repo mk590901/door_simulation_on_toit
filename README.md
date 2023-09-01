@@ -3,7 +3,7 @@
 # Introduction
 The reason for writing this application was to try to show how can create managed code app uses object-oriented approach and that will run on a controller with more than limited resources.
 
-An application written in the toit language (https://toit.io/) is a simulator of an automatically opening/closing door. The principle of operation is described by state machine, presented below:
+An application written in the ***toit*** language (https://toit.io/) is a simulator of an automatically opening/closing door. The principle of operation is described by state machine, presented below:
 
 ![door](https://github.com/mk590901/door_simulation_on_toit/assets/125393245/9e25e66b-e0e5-4d98-bc1b-510ae96672b5)
 
@@ -42,3 +42,62 @@ Contains a container of timers, Allows to add, remove or start a named timer, as
 ## main        *(door_runner.toit)*
 And finally the main module, which creates the ***DoorStateMachine***, initiates it and runs the simulation.
 
+# Application launch 
+There are several options for performing this operation. he site ***toit.io*** ((https://toit.io/)) suggests installing and using the ***jag*** app, but I'm still using ***toit***, which I installed two years ago. Judging by the documentation, both applications are similar.  The application can be run on a **computer** and/or on **ESP32**.  The result is identical.
+
+Below are the results of running the application: command line and result.
+
+## Run on computer
+```
+micrcx@micrcx-desktop:~/toit_apps/door_simulation_short$ toit execute door_runner.toit
+(17:08:19.637) @Closing  - start
+(17:08:19.637) [Start timer tC]
+(17:08:19.637) [Closing] @start
+(17:08:19.638) [State]->DOOR IS CLOSING
+******* AFTER SLEEP 1200 *******
+? Failed to get transition for event [close door] and state [DOOR IS CLOSING]
+(17:08:20.838) @Opening  - start
+(17:08:20.839) [Opening] @start
+(17:08:20.839) [State]->DOOR IS OPENING
+(17:08:23.842) [Opening] @final
+(17:08:23.842) @Opened   - final
+(17:08:23.843) [AutoClosing] @start
+(17:08:23.843) [State]->DOOR IS OPENED
+(17:08:26.352) [AutoClosing] @final
+(17:08:26.353) @Closing  - start
+(17:08:26.353) [Closing] @start
+(17:08:26.353) [State]->DOOR IS CLOSING
+(17:08:28.357) [Closing] @final
+(17:08:28.357) @Closed   - final
+(17:08:28.358) [State]->DOOR IS CLOSED
+(17:08:28.358) [Final timer : close engine]
+micrcx@micrcx-desktop:~/toit_apps/door_simulation_short$ 
+```
+
+## Run on ESP32
+```
+micrcx@micrcx-desktop:~/toit_apps/door_simulation_short$ toit run -d=nuc door_runner.toit
+2023-08-30T17:05:43.619668Z: <process initiated>
+(19:05:43.471) @Closing  - start
+(19:05:43.516) [Start timer tC]
+(19:05:43.545) [Closing] @start
+(19:05:43.559) [State]->DOOR IS CLOSING
+******* AFTER SLEEP 1200 *******
+? Failed to get transition for event [close door] and state [DOOR IS CLOSING]
+(19:05:44.836) @Opening  - start
+(19:05:44.871) [Opening] @start
+(19:05:44.900) [State]->DOOR IS OPENING
+(19:05:47.890) [Opening] @final
+(19:05:47.907) @Opened   - final
+(19:05:47.938) [AutoClosing] @start
+(19:05:47.969) [State]->DOOR IS OPENED
+(19:05:50.450) [AutoClosing] @final
+(19:05:50.476) @Closing  - start
+(19:05:50.507) [Closing] @start
+(19:05:50.539) [State]->DOOR IS CLOSING
+(19:05:52.510) [Closing] @final
+(19:05:52.526) @Closed   - final
+(19:05:52.555) [State]->DOOR IS CLOSED
+(19:05:52.590) [Final timer : close engine]
+2023-08-30T17:05:53.096294Z: <process terminated - exit code: 0>
+```
